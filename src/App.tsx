@@ -11,6 +11,7 @@ import FunctionalComponentWithState from "./components/FunctionalComponentWithSt
 import Counter from "./components/Counter.tsx";
 import NameChanger from "./components/NameChanger.tsx";
 import CounterWithMoreStates from "./components/CounterWithMoreStates.tsx";
+import CounterAdvanced from "./components/CounterAdvanced.tsx";
 
 
 
@@ -37,6 +38,7 @@ function App() {
                 <Counter />
                 <NameChanger />
                 <CounterWithMoreStates />
+                <CounterAdvanced />
             </Layout>
 
 
