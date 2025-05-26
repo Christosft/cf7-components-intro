@@ -1,7 +1,7 @@
 //import ViteIntro from "./pages/ViteIntro.tsx";
 
 // import ClassComponent from "./components/ClassComponent.tsx";
-import FunctionalComponent from "./components/FunctionalComponent.tsx";
+// import FunctionalComponent from "./components/FunctionalComponent.tsx";
 // import ArrowFunctionalComponent from "./components/ArrowFunctionalComponent.tsx";
 // import ArrowFunctionalComponentProps from "./components/ArrowFunctionalComponentProps.tsx";
 // import ArrowFunctionalComponentPropsType from "./components/ArrowFunctionalComponentPropsType.tsx";
@@ -12,6 +12,8 @@ import Counter from "./components/Counter.tsx";
 import NameChanger from "./components/NameChanger.tsx";
 import CounterWithMoreStates from "./components/CounterWithMoreStates.tsx";
 import CounterAdvanced from "./components/CounterAdvanced.tsx";
+import CounterWithCustomHook from "./components/CounterWithCustomHook.tsx";
+import CounterAdvancedWithCustomHook from "./components/CounterAdvancedWithCustomHook.tsx";
 
 
 
@@ -33,12 +35,15 @@ function App() {
 
 
                 <h1 className="text-2xl font-bold text-center"></h1>
-                <FunctionalComponent/>
+                {/*<FunctionalComponent />*/}
                 <FunctionalComponentWithState />
                 <Counter />
                 <NameChanger />
                 <CounterWithMoreStates />
                 <CounterAdvanced />
+                <CounterWithMoreStates />
+                <CounterWithCustomHook />
+                <CounterAdvancedWithCustomHook />
             </Layout>
 
 
