@@ -9,6 +9,8 @@ import Layout from "./components/Layout.tsx";
 import ClassComponentWithState from "./components/ClassComponentWithState.tsx";
 import FunctionalComponentWithState from "./components/FunctionalComponentWithState.tsx";
 import Counter from "./components/Counter.tsx";
+import NameChanger from "./components/NameChanger.tsx";
+import CounterWithMoreStates from "./components/CounterWithMoreStates.tsx";
 
 
 
@@ -33,6 +35,8 @@ function App() {
                 <FunctionalComponent/>
                 <FunctionalComponentWithState />
                 <Counter />
+                <NameChanger />
+                <CounterWithMoreStates />
             </Layout>
 
 
