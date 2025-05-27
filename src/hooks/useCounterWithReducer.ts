@@ -29,16 +29,16 @@ function reducer(state: CounterState, action: Action) : CounterState {
             }
         case "DECREASE":
             return state.count > 0
-            ? {
-                count: state.count -1,
+                ? {
+                    count: state.count -1,
                     lastAction: "Decrease",
                     time: getCurrentTime(),
                 }
                 :state;
             // return {
-            //     // count: state.count -1,
-            //     // lastAction: "Decrease",
-            //     // time: getCurrentTime(),
+                // count: state.count -1,
+                // lastAction: "Decrease",
+                // time: getCurrentTime(),
             // }
             case "RESET":
                 return {
