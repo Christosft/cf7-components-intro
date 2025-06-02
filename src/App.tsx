@@ -16,6 +16,7 @@ import NameChanger from "./components/NameChanger.tsx";
 // import CounterAdvancedWithCustomHook from "./components/CounterAdvancedWithCustomHook.tsx";
 import CounterWithReducer from "./components/CounterWithReducer.tsx";
 import Todo from "./components/Todo/Todo.tsx";
+import OnlineStatus from "./components/OnlineStatus.tsx";
 
 
 
@@ -48,6 +49,7 @@ function App() {
                 {/*<CounterAdvancedWithCustomHook />*/}
                 <CounterWithReducer />
                 <Todo />
+                <OnlineStatus />
             </Layout>
 
 

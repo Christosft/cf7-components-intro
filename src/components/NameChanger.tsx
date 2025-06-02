@@ -5,9 +5,19 @@ import {useState} from "react";
 const NameChanger = () => {
     const [name, setName] = useState<string>("");
 
+    // const setup = () => {
+    //     document.title = name ? `Hello ${name}!` : "Hello, Stranger!";
+    // }
+    // useEffect(setup, [name]);
+
     useEffect(() => {
         document.title = name ? `Hello, ${name}` : "Hello Stranger!";
     }, [name]);
+
+    useEffect(() => {
+        const id: number = setInterval(() => console.log("tick"), 1000);
+        return () => clearInterval(id)
+    }, []);
 
     const HandleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setName(e.target.value);
