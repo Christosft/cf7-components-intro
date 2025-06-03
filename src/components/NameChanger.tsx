@@ -11,7 +11,7 @@ const NameChanger = () => {
     // useEffect(setup, [name]);
 
     useEffect(() => {
-        document.title = name ? `Hello, ${name}` : "Hello Stranger!";
+        document.title = name ? `Hello, ${name}` : "Aueb Coding Factory!";
     }, [name]);
 
     useEffect(() => {
