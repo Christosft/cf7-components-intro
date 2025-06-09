@@ -20,7 +20,7 @@ const HeaderResponsive = () => {
                         onClick={() => setMenuOpen(!menuOpen)}
                     >
                         { menuOpen ? <X size={36} /> : <Menu size="36" /> }
-                        <Menu />
+
                     </button>
 
                     <nav

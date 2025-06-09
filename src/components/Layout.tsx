@@ -13,7 +13,7 @@ const Layout  = ({ children }: LayoutProps) => {
         <>
             {/*<Header />*/}
             <HeaderResponsive />
-            <div className="container mx-auto min-h-[100vh] pt-24">
+            <div className="container mx-auto min-h-[95vh] pt-24">
                 {children}
             </div>
 
