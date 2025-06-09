@@ -23,6 +23,8 @@ import NameChangerPage from "./pages/NameChangerPage.tsx";
 import OnlineStatusPage from "./pages/OnlineStatusPage.tsx";
 import UserPage from "./pages/UserPage.tsx";
 import RouterLayout from "./components/RouterLayout.tsx";
+import ExamplePage from "./pages/ExamplePage.tsx";
+import RouterExamplesLayout from "./components/RouterExamplesLayout.tsx";
 
 
 
@@ -62,15 +64,17 @@ function App() {
                 {/*<Layout>*/}
                 <Routes>
                     {/*<Route path="/" element={<HomePage />} />*/}
-                    <Route element={<RouterLayout />} />
-                    <Route index element={<HomePage />} />
-                    <Route path="name-changer" element={<NameChangerPage />} />
-                    <Route path={"examples"}>
+                    <Route element={<RouterLayout />} >
+                        <Route index element={<HomePage />} />
+                        <Route path="name-changer" element={<NameChangerPage />} />
+                    </Route>
+                    <Route path="examples" element={<RouterExamplesLayout />}>
+                        <Route index element={<ExamplePage />} />
                         <Route path="name-changer" element={<NameChangerPage />} />
                         <Route path="online-status" element={<OnlineStatusPage />} />
                     </Route>
-                    <Route path="users/:userId" element={<UserPage />} />
-                    <Route path="users" element={<UserPage />} />
+                        <Route path="users/:userId" element={<UserPage />} />
+                        <Route path="users" element={<UserPage />} />
                     {/*<Route path="files/*" element={<FilePage />} />*/}
                 </Routes>
                 {/*</Layout>*/}
