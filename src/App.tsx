@@ -18,7 +18,7 @@
 // import Todo from "./components/Todo/Todo.tsx";
 // import OnlineStatus from "./components/OnlineStatus.tsx";
 import {BrowserRouter, Routes, Route} from "react-router";
-import HomePage from "./pages/HomePage.tsx";
+// import HomePage from "./pages/HomePage.tsx";
 import NameChangerPage from "./pages/NameChangerPage.tsx";
 import OnlineStatusPage from "./pages/OnlineStatusPage.tsx";
 import UserPage from "./pages/UserPage.tsx";
@@ -28,6 +28,7 @@ import RouterExamplesLayout from "./components/RouterExamplesLayout.tsx";
 // import AutoRedirectPage from "./pages/AutoRedirectPage.tsx";
 import AutoRedirectPageAdvanced from "./pages/AutoRedirectPageAdvanced.tsx";
 import NotFoundPage from "./pages/NotFoundPage.tsx";
+import FocusInput from "./components/FocusInput.tsx";
 
 
 
@@ -68,8 +69,9 @@ function App() {
                 <Routes>
                     {/*<Route path="/" element={<HomePage />} />*/}
                     <Route element={<RouterLayout />} >
-                        <Route index element={<HomePage />} />
-                        <Route path="name-changer" element={<NameChangerPage />} />
+                        {/*<Route index element={<HomePage />} />*/}
+                        {/*<Route path="name-changer" element={<NameChangerPage />} />*/}
+                        <Route index element={<FocusInput />} />
                     </Route>
                     <Route path="examples" element={<RouterExamplesLayout />}>
                         <Route index element={<ExamplePage />} />
