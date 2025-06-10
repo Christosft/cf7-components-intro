@@ -25,6 +25,9 @@ import UserPage from "./pages/UserPage.tsx";
 import RouterLayout from "./components/RouterLayout.tsx";
 import ExamplePage from "./pages/ExamplePage.tsx";
 import RouterExamplesLayout from "./components/RouterExamplesLayout.tsx";
+// import AutoRedirectPage from "./pages/AutoRedirectPage.tsx";
+import AutoRedirectPageAdvanced from "./pages/AutoRedirectPageAdvanced.tsx";
+import NotFoundPage from "./pages/NotFoundPage.tsx";
 
 
 
@@ -72,10 +75,13 @@ function App() {
                         <Route index element={<ExamplePage />} />
                         <Route path="name-changer" element={<NameChangerPage />} />
                         <Route path="online-status" element={<OnlineStatusPage />} />
+                        {/*<Route path="auto-redirect" element={<AutoRedirectPage />} />*/}
+                        <Route path={"auto-redirect-advanced"} element={<AutoRedirectPageAdvanced />} />
                     </Route>
                         <Route path="users/:userId" element={<UserPage />} />
                         <Route path="users" element={<UserPage />} />
                     {/*<Route path="files/*" element={<FilePage />} />*/}
+                    <Route path="*" element={<NotFoundPage />} />
                 </Routes>
                 {/*</Layout>*/}
             </BrowserRouter>
