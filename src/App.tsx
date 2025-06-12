@@ -28,7 +28,9 @@ import RouterExamplesLayout from "./components/RouterExamplesLayout.tsx";
 // import AutoRedirectPage from "./pages/AutoRedirectPage.tsx";
 import AutoRedirectPageAdvanced from "./pages/AutoRedirectPageAdvanced.tsx";
 import NotFoundPage from "./pages/NotFoundPage.tsx";
-import FocusInput from "./components/FocusInput.tsx";
+// import FocusInput from "./components/FocusInput.tsx";
+import MultiFieldForm from "./components/MultiFieldForm.tsx";
+import MultiFieldFormWithValidation from "./components/MultiFieldFormWithValidation.tsx";
 
 
 
@@ -71,7 +73,9 @@ function App() {
                     <Route element={<RouterLayout />} >
                         {/*<Route index element={<HomePage />} />*/}
                         {/*<Route path="name-changer" element={<NameChangerPage />} />*/}
-                        <Route index element={<FocusInput />} />
+                        {/*<Route index element={<FocusInput />} />*/}
+                        {/*<Route index element={<MultiFieldForm />} />*/}
+                        <Route index element={<MultiFieldFormWithValidation />} />
                     </Route>
                     <Route path="examples" element={<RouterExamplesLayout />}>
                         <Route index element={<ExamplePage />} />
