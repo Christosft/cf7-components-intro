@@ -1,11 +1,23 @@
 import {useState} from "react";
+import {z} from "zod";
 
 
-export type FormValues = {
-    name: string;
-    email: string;
-    message: string;
-}
+const formSchema = z.object({
+    name: z.string().trim().nonempty("Name is required."),
+    email: z
+        .string()
+        .trim()
+        .nonempty("Email is required.")
+        .email("Email is invalid."),
+    message: z
+        .string()
+        .trim()
+        .nonempty("Message is required.")
+        .min(5, "Message must be at least 5 characters")
+        .max(50, "Message must be at most 50 characters"),
+})
+
+type FormValues = z.infer<typeof formSchema>;
 
 type FormErrors = {
     name?: string;
@@ -19,47 +31,41 @@ const initialValues = {
     message: "",
 }
 
-const MultiFieldFormWithValidation = () => {
+const MultiFieldFormWithZodValidation = () => {
 
     const [values, setValues] = useState<FormValues>(initialValues);
     const [submittedData, setSubmittedData] = useState<FormValues | null>(null);
     const [errors, setErrors] = useState<FormErrors | null>(null);
 
 
-    const validateForm = (values: FormValues): FormErrors => {
-        const errors: FormErrors = {};
+    const validateForm = () => {
+        const result = formSchema.safeParse(values);
+        // {success: true, data: validateData};
+        // {success: false, errors: errors};
+        if(!result.success) {
+            const newErrors: FormErrors = {};
 
-            if(!values.name.trim()) {
-                errors.name = "Name is required."
-            }
+            result.error.issues.forEach((issue) => {
+                const fieldName = issue.path[0] as keyof FormErrors;
+                newErrors[fieldName] = issue.message;
+            })
+            setErrors(newErrors);
+            return false;
+        }
 
-            if(!values.email.trim() ||
-                !/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/.
-                test(values.email.trim())) {
-                    errors.email = "Please enter a valid email address."
-            }
-
-            if(values.message.length < 5) {
-                errors.message = "Message must be at least 5 characters."
-            }
-
-            return errors;
+        setErrors({});
+        return true;
     };
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        const validationErrors = validateForm(values);
+        const isValid = validateForm();
 
-        if(Object.keys(validationErrors).length > 0) {
-            setErrors(validationErrors);
-            return;
+        if(isValid) {
+            setSubmittedData(values);
+            setErrors(initialValues);
         }
-
-        setSubmittedData(values);
-        setValues(initialValues);
-        setErrors(null);
-
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -160,4 +166,4 @@ const MultiFieldFormWithValidation = () => {
         </>
     )
 };
-export default MultiFieldFormWithValidation;
+export default MultiFieldFormWithZodValidation;

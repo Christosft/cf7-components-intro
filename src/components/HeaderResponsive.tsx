@@ -36,7 +36,9 @@ const HeaderResponsive = () => {
                                 onClick={() => setMenuOpen(false)}>Home</Link>
                         <Link to="/examples/name-changer" className="block md:inline hover:underline hover:underline-offset-4"
                                 onClick={() => setMenuOpen(false)}>Name Changer</Link>
-                        <Link to="/example/online-status" className="block md:inline hover:underline hover:underline-offset-4"
+                        <Link to="/examples/form-inputs"  className="block md:inline hover:underline hover:underline-offset-4"
+                              onClick={() => setMenuOpen(true)}>FormInput</Link>
+                        <Link to="/examples/online-status" className="block md:inline hover:underline hover:underline-offset-4"
                                 onClick={() => setMenuOpen(false)}>Online-Status</Link>
                     </nav>
                 </div>
